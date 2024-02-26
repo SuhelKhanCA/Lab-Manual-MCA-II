@@ -1,0 +1,31 @@
+Setup LOG4J
+-------------
+1. Download the log4j JAR file from: [https://logging.apache.org/log4j/1.2/download.html](https://logging.apache.org/log4j/1.2/download.html)
+2. Extract it to the desired folder of your choice.
+3. In IntelliJ, go to the File menu, then select Project Structure. Under Dependencies, click on the '+' icon.
+4. Now, click on JARs or Directories.
+5. Navigate to the Log4j file and select the JAR file.
+6. Click Apply and then OK.
+7. Create a file named `log4j.properties` in the src folder.
+8. Paste the code below (modify the `log4j.appender.file.File` path as desired).
+
+                                                                                         [Contributed by G Azam]
+
+CODE (log4j.properties)
+-------------------------
+# Root logger option
+log4j.rootLogger=INFO, file, stdout
+
+# Direct log messages to a log file
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=E:\\logging.log
+log4j.appender.file.MaxFileSize=10MB
+log4j.appender.file.MaxBackupIndex=10
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
