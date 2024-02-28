@@ -1,10 +1,7 @@
 package First;
-
 import org.apache.log4j.Logger;
 import java.io.*;
-
 public class w7q2 {
-
     private static final Logger log = Logger.getLogger(w7q2.class);
         public static void main(String[] args) {
             try {
@@ -32,6 +29,4 @@ public class w7q2 {
                 System.out.println("Operation Complete!");
             }
         }
-
-
 }
