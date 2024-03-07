@@ -1,7 +1,7 @@
 package Week10;
 import java.util.ArrayList;
 
-public class TypeCastingCollection { // Q2
+public class TypeCastingCollection3 { // Question no. 3
 
     public static void main(String[] args) {
         ArrayList<Object> data = new ArrayList<>();
@@ -9,10 +9,13 @@ public class TypeCastingCollection { // Q2
         data.add(10);
         data.add(3.14);
         data.add(true);
+        data.add(new Double(22.5)); // Wrapper class object
+        data.add(new Character('A')); // Character object
 
         int successfulCasts = 0;
 
         for (Object obj : data) {
+            // Casting attempts to String, Integer, Double
             try {
                 String str = (String) obj;
                 System.out.println("Successfully cast " + obj.getClass().getSimpleName() + " to String: " + str);
@@ -21,8 +24,6 @@ public class TypeCastingCollection { // Q2
                 System.out.println("Error: Casting " + obj.getClass().getSimpleName() + " to String failed.");
             }
 
-            // Repeat similar try-catch blocks for other desired casting attempts
-            // For example:
             try {
                 Integer num = (Integer) obj;
                 System.out.println("Successfully cast " + obj.getClass().getSimpleName() + " to Integer: " + num);
@@ -31,7 +32,13 @@ public class TypeCastingCollection { // Q2
                 System.out.println("Error: Casting " + obj.getClass().getSimpleName() + " to Integer failed.");
             }
 
-            // ... and so on for Double, Boolean, etc.
+            try {
+                Double dNum = (Double) obj;
+                System.out.println("Successfully cast " + obj.getClass().getSimpleName() + " to Double: " + dNum);
+                successfulCasts++;
+            } catch (ClassCastException e) {
+                System.out.println("Error: Casting " + obj.getClass().getSimpleName() + " to Double failed.");
+            }
         }
 
         System.out.println("Total successful casts: " + successfulCasts);

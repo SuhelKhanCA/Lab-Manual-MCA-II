@@ -1,6 +1,6 @@
 package Week10;
 
-public class TypeCastingExamples {
+public class TypeCastingExamples { // Q2
 
     public static void main(String[] args) {
 
