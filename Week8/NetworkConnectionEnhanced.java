@@ -12,7 +12,7 @@ public class NetworkConnectionEnhanced {
     }
 
     public static void main(String[] args) throws NetworkConnectionException {
-        String urlString = "http://www.thisurldoesnotexist.com"; 
+        String urlString = "https://www.youtube.com/"; 
 
         HttpURLConnection connection = null;
         try {
